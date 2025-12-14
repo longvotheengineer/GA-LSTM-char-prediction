@@ -1,140 +1,148 @@
-# Hybrid Sequence Modeling: LSTM & Genetic Algorithm (MATLAB)
-
+# AI in Control Engineering: Comprehensive Algorithms Portfolio
 [![MATLAB](https://img.shields.io/badge/Language-MATLAB-orange.svg)](https://www.mathworks.com/products/matlab.html)
-[![License](https://img.shields.io/badge/License-MIT-blue.svg)](LICENSE)
-[![Status](https://img.shields.io/badge/Status-Educational-green.svg)]()
+[![Python](https://img.shields.io/badge/Language-Python-blue.svg)](https://www.python.org/)
+[![License](https://img.shields.io/badge/License-MIT-green.svg)](LICENSE)
+[![Status](https://img.shields.io/badge/Status-Completed-success.svg)]()
 
-> **A comprehensive MATLAB repository implementing Long Short-Term Memory (LSTM) networks from scratch and utilizing Genetic Algorithms (GA) for Character-Level Language Modeling and Sequence Optimization.**
+> **A comprehensive repository containing 9 implementations of fundamental and advanced Artificial Intelligence algorithms. This collection covers Supervised Learning, Unsupervised Learning, Reinforcement Learning, Evolutionary Computation, and Deep Neural Networks, developed for the "AI in Control" course at HCMUT.**
 
 ---
 
 ## Table of Contents
 - [Project Overview](#-project-overview)
-- [Key Features](#-key-features)
 - [Repository Structure](#-repository-structure)
-- [Getting Started](#-getting-started)
-- [Method 1: LSTM From Scratch](#-method-1-lstm-from-scratch)
-- [Method 2: Genetic Algorithm Optimization](#-method-2-genetic-algorithm-optimization)
-- [Visual Diagnostics](#-visual-diagnostics)
+- [Module 1: Supervised Learning](#-module-1-supervised-learning)
+- [Module 2: Unsupervised Learning](#-module-2-unsupervised-learning)
+- [Module 3: Reinforcement Learning](#-module-3-reinforcement-learning)
+- [Module 4: Evolutionary Algorithms](#-module-4-evolutionary-algorithms)
+- [Module 5: Deep Learning & CNNs](#-module-5-deep-learning--cnns)
 - [Authors & Acknowledgments](#-authors--acknowledgments)
 
 ---
 
 ## Project Overview
 
-This project explores two distinct approaches to **Sequence Prediction** and **Text Generation** (specifically solving the "Hello" problem):
+This repository serves as a practical implementation guide for core AI concepts. The projects are divided into **9 Homework (HW)** assignments, utilizing a hybrid tech stack of **Python** (for Scikit-learn/Data Science tasks) and **MATLAB** (for Control/Simulation/Math-heavy tasks).
 
-1.  **Neural Approach (LSTM):** A rigorous, mathematically explicit implementation of LSTM cells without relying on high-level Deep Learning toolboxes. It focuses on visualizing the internal state (Gates, Cell Memory, Hidden State) transparency.
-2.  **Evolutionary Approach (GA):** Leveraging the Global Optimization Toolbox to "evolve" character strings towards a target, demonstrating how heuristic search can solve sequence problems.
-
----
-
-## Key Features
-
-| Feature | Description |
-| :--- | :--- |
-| **LSTM "From Scratch"** | Full implementation of forward propagation, including sigmoid/tanh activations and gate logic ($f_t, i_t, o_t, \tilde{C}_t$). |
-| **Live Animation** | Dynamic dashboards showing how neurons activate and how the algorithm "thinks" step-by-step. |
-| **Genetic Search** | Implementation of sequential typing prediction and whole-word suggestion using evolutionary strategies. |
-| **Interactive CLI** | Scripts that accept user input (`h`, `g`, `w`) to trigger specific optimization tasks. |
+**Key Domains Covered:**
+* **Classification & Regression:** Perceptron, SVM, Linear Regression, KNN.
+* **Clustering:** K-Means.
+* **Decision Making:** Q-Learning.
+* **Optimization:** Genetic Algorithms.
+* **Sequence Modeling & Vision:** LSTM, AlexNet Architecture.
 
 ---
 
 ## Repository Structure
 
-The codebase is organized into modular scripts for core logic, visualization, and execution drivers.
-
-### Core LSTM Logic
-| File | Functionality |
-| :--- | :--- |
-| `lstm_cell.m` | **The Engine.** Calculates the state updates for a single time step given input $x_t$ and previous states $h_{t-1}, C_{t-1}$. |
-| `lstm_forward.m` | Handles the temporal loop, processing an entire sequence of inputs through the LSTM cell. |
-
-### LSTM Drivers & Animations
-| File | Functionality |
-| :--- | :--- |
-| `lstm_animate_hello.m` | **Main Demo.** Trains an LSTM to learn "hello", then animates the prediction probability (Softmax) for each character. |
-| `lstm_animate_single_step.m` | **Deep Dive.** Visualizes the matrix operations of a *single* time step in a dark-mode dashboard. |
-| `lstm_animate_process.m` | Animates the gates and cell state response to a specific input pulse pattern. |
-| `lstm_animate_state.m` | Visualizes the real-time continuous signal processing (Input vs. Memory vs. Output). |
-
-### Genetic Algorithm Drivers
-| File | Functionality |
-| :--- | :--- |
-| `hello_run_genetic_algorithm.m`| **Sequential Typing.** Solves "hello" character-by-character using GA at every keystroke. |
-| `run_genetic_algorithm.m` | **Word Suggestion.** Finds full words ("hello", "green", "white") based on user input. |
-| `find_text_fitness.m` | Cost function calculating the distance between the current string and the target. |
-| `print_evolution.m` | Helper function to log generation progress to the command window. |
+| HW | Algorithm | Type | Language | Key Feature |
+| :--- | :--- | :--- | :--- | :--- |
+| **01** | **Perceptron** | Supervised | Python | Linear binary classification on 2D/3D datasets. |
+| **02** | **SVM** | Supervised | Python | Optimal hyperplane finding using Scikit-learn. |
+| **03** | **Linear Regression** | Supervised | Python | House price prediction based on Area ($m^2$). |
+| **04** | **KNN** | Supervised | Python | Handwritten Digit Recognition (MNIST). |
+| **05** | **K-Means** | Unsupervised | MATLAB | Customer segmentation (Age vs. Income). |
+| **06** | **Q-Learning** | RL | MATLAB | Pathfinding agent in a multi-room environment. |
+| **07** | **AlexNet** | DL Theory | Doc | Manual calculation of CNN parameters. |
+| **08** | **Genetic Algorithm** | Optimization | MATLAB | Text prediction using Evolutionary Strategy. |
+| **09** | **LSTM** | Deep Learning | MATLAB | RNN built from scratch for sequence modeling. |
 
 ---
 
-## Getting Started
+## Module 1: Supervised Learning
 
-### Prerequisites
-* **MATLAB** (R2018b or newer recommended).
-* **Global Optimization Toolbox** (Required for the GA scripts).
+### HW1: Perceptron Algorithm
+Implementation of the single-layer Perceptron for binary classification.
+* **Task:** Linearly separate Class 0 and Class 1 in both 2D and 3D spaces.
+* **Result:** Successfully converged to find the separating weights.
 
-### Installation
-1.  Clone this repository:
-    ```bash
-    git clone [https://github.com/YourUsername/LSTM-GA-Char-Prediction-Matlab.git](https://github.com/YourUsername/LSTM-GA-Char-Prediction-Matlab.git)
-    ```
-2.  Open MATLAB and navigate to the repository folder.
-3.  Add the folder to your MATLAB path.
+### HW2: Support Vector Machine (SVM)
+Utilizing SVM to find the optimal hyperplane that maximizes the margin between classes.
+* **Tools:** `scikit-learn`.
+* **Outcome:** Visualized the support vectors and the decision boundary.
 
----
+### HW3: Linear Regression (House Price Prediction)
+A classic regression problem predicting housing prices based on area.
+* [cite_start]**Formula:** $y = 1.9449x + 107.8733$[cite: 157].
+* [cite_start]**Performance:** Achieved an RMSE of **6.53 million VND**[cite: 161].
+* **Visualization:** Plotting the "Line of Best Fit" against real data points.
 
-## Method 1: LSTM 
-
-The LSTM implementation focuses on the mathematical transparency of the cell updates:
-
-$$ f_t = \sigma(W_f \cdot [h_{t-1}, x_t] + b_f) $$
-$$ C_t = f_t * C_{t-1} + i_t * \tilde{C}_t $$
-
-### How to Run:
-1.  **To see the network learn "hello":**
-    Run `lstm_animate_hello.m`.
-    * *Note:* The script will first train (displaying loss in the command window) and then launch a figure to animate the prediction.
-2.  **To understand the internal math:**
-    Run `lstm_animate_single_step.m`.
-
-> **LSTM Internal State:**
-<img width="975" height="548" alt="image" src="https://github.com/user-attachments/assets/e4a1b06e-331c-41ad-a38f-5bd703a9be61" />
+### HW4: K-Nearest Neighbors (KNN) - MNIST
+A computer vision system to recognize handwritten digits (0-9).
+* **Dataset:** MNIST (28x28 pixel images).
+* **Optimization:** Tested $k \in \{1, 3, 5, 7, 9, 11\}$.
+* [cite_start]**Result:** Optimal accuracy of **91.60%** achieved at **$k=3$**[cite: 335, 380].
 
 ---
 
-## Method 2: Genetic Algorithm Optimization
+## Module 2: Unsupervised Learning
 
-This module treats text generation as an optimization problem where the "fitness" is the similarity to a target word.
-
-### How to Run:
-1.  **Sequential Typing Simulation:**
-    Run `hello_run_genetic_algorithm.m`.
-    * Follow the prompts to type "hello". The GA will "search" for the next key for you.
-2.  **Word Suggestion:**
-    Run `run_genetic_algorithm.m`.
-    * Enter `h`, `g`, or `w` when prompted.
-    * The script will plot the convergence of the penalty value over generations.
-
-> **Gate Activations:**
-<img width="700" height="564" alt="image" src="https://github.com/user-attachments/assets/93eb5dc9-d195-4298-a697-874ddafd583f" />
+### HW5: K-Means Clustering
+Grouping data points without labeled outcomes.
+* [cite_start]**Scenario:** Segmentation of population based on **Age** and **Income**[cite: 438].
+* **Technique:** Used the **Elbow Method** to determine the optimal number of clusters.
+* [cite_start]**Result:** The Elbow plot indicated $K=3$ as the optimal cluster count[cite: 591].
 
 ---
 
-## Visual Diagnostics
+## Module 3: Reinforcement Learning
 
-The repository includes specialized visualization tools to diagnose network behavior:
+### HW6: Q-Learning (Navigation)
+A model-free reinforcement learning algorithm where an agent learns to navigate rooms to reach a goal.
+* **Mechanism:** Agent explores states (Rooms 0-5), updates the Q-Matrix based on Rewards (R-Matrix).
+* **Parameters:** Learning Rate $\alpha = 1$, Discount Factor $\gamma = 0.8$.
+* [cite_start]**Convergence:** The Q-Matrix converged at **Episode 2457**[cite: 687].
 
-* **Gate Saturation:** See when the Forget Gate ($f_t$) is open (1) or closed (0).
-* **Memory Retention:** Observe how long the Cell State ($C_t$) holds a value after the input signal vanishes.
-* **Softmax Confidence:** Real-time bar charts showing the probability distribution of the next predicted character.
+---
+
+## Module 4: Evolutionary Algorithms
+
+### HW8: Genetic Algorithm (Text Prediction)
+Using the MATLAB **GA Toolbox** to "evolve" random strings into target words.
+* **Tasks:**
+    1.  **Sequential Typing:** Predicting the next character.
+    2.  **Word Suggestion:** Finding full words ("hello", "green", "white").
+* **Configuration:** Tournament Selection, Laplace Crossover, Adaptive Mutation.
+* **Performance:**
+    * "Hello": Converged in ~91 generations.
+    * "Green": Converged in ~72 generations.
+    * [cite_start]"White": Converged in ~78 generations[cite: 815, 965, 998].
+
+> **Optimization Process:**
+> The penalty value drops to 0 as the population evolves to match the target string perfectly.
+
+---
+
+## Module 5: Deep Learning & CNNs
+
+### HW7: AlexNet Architecture Analysis
+A theoretical breakdown of the famous AlexNet CNN.
+* **Task:** Manual calculation of learnable parameters for every layer.
+* [cite_start]**Total Parameters Calculated:** **62,378,344**[cite: 753].
+
+### HW9: Long Short-Term Memory (LSTM) From Scratch
+A rigorous MATLAB implementation of LSTM cells to solve the Vanishing Gradient problem.
+* **Core Feature:** Implemented purely using matrix operations (no high-level DL toolboxes) to visualize $f_t$, $i_t$, $o_t$, and Cell State $C_t$.
+* **Application:** Character-level language model to learn the sequence "h-e-l-l-o".
+* **Visualization:** Dynamic dashboard showing gate saturation and memory retention over time.
 
 ---
 
 ## Authors & Acknowledgments
 
-* **Author:** Longvo Theengineer
-* **Institution:** Ho Chi Minh city University of Technology (HCMUT)
-* **Inspiration:** Concepts based on Character-Level RNNs and Evolutionary Computing strategies.
+[cite_start]**Group L01 - AI in Control Engineering** [cite: 8, 13]
+* [cite_start]**Instructor:** Dr. Pham Viet Cuong [cite: 7]
+* [cite_start]**Institution:** Ho Chi Minh City University of Technology (HCMUT) [cite: 2]
+
+**Team Members:**
+
+| Full Name | Student ID | Responsibility |
+| :--- | :---: | :--- |
+| **Thanh Le Van** | `2213087` | HW 1, 2 |
+| **Thuong Tran Dinh** | `2213424` | HW 3, 4 |
+| **An Truong Tuan** | `2210041` | HW 5, 6, 7 |
+| **Long Vo** | `2211910` | HW 8 & 9 |
+| **Thien Huynh Duc** | `2213249` | Compilation |
 
 ---
+*Created December 2025*
